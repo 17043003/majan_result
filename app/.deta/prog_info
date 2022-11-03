@@ -1,0 +1,1 @@
+{"id":"4cb57f5d-be49-4760-b574-454b76c8a189","space":37137,"runtime":"python3.9","name":"app","path":"x8yweb","project":"a0f8lmt1","account":"144798365827","region":"eu-central-1","deps":["mahjong==1.2.0","fastapi"],"envs":null,"public":true,"log_level":"debug","cron":""}
