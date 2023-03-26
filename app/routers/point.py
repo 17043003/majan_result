@@ -1,4 +1,4 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
 
 import majan_point
 
@@ -15,6 +15,13 @@ async def detail_point(
     mp = majan_point.MajanPoint()
     hands = {'man': m, 'sou': s, 'pin': p, 'honors': h}
     win_hand = {'man': w_m, 'sou': w_s, 'pin': w_p, 'honors': w_h}
+
+    sum_count = 0
+    for count in hands.values():
+        sum_count += len(count)
+    
+    if(sum_count < 14 ):
+        raise HTTPException(status_code=404, detail="hands are lack.")
     
     dora_indicators = {'man': dora_m, 'sou': dora_s, 'pin': dora_p, 'honors': dora_h}
     if all(not v for v in dora_indicators.values()):
