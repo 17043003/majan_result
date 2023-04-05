@@ -2,9 +2,11 @@ from typing import Optional
 from fastapi import FastAPI
 
 from routers import point
+from routers import wait
 
 app = FastAPI()
 app.include_router(point.router)
+app.include_router(wait.router)
 
 
 @app.get("/")
