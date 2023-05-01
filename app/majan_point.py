@@ -26,9 +26,12 @@ class MajanPoint:
             elif c == 'p': return 'pin'
             else: return 'honors'
 
+        
         for t in opens:
-            kind = char_to_kind(t[0])
+            if(len(t) <= 0):
+                continue
             
+            kind = char_to_kind(t[0])
             nums = re.sub(r"\D", "", t)
             hands[kind] += nums
 
@@ -85,14 +88,6 @@ class MajanPoint:
             player_wind=WINDS[own_wind],
             round_wind=WINDS[field_wind],
             options=OptionalRules(has_open_tanyao=True))
-
-
-        def hands_added_melds(tiles, melds):
-            print(melds[0].tiles)
-        
-        hands_added_melds(tiles, melds)
-
-        print(tiles, win_tile, melds)
 
         result = self.calculator.estimate_hand_value(
             tiles, win_tile, melds=melds, config=config)
