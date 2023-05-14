@@ -5,6 +5,8 @@ from mahjong.tile import TilesConverter
 from mahjong.hand_calculating.hand_config import HandConfig, OptionalRules
 from mahjong.meld import Meld
 
+from hand_translation import HandTranslation
+
 class MajanPoint:
     def __init__(self):
         self.calculator = HandCalculator()
@@ -91,6 +93,11 @@ class MajanPoint:
 
         result = self.calculator.estimate_hand_value(
             tiles, win_tile, melds=melds, config=config)
+
+        translate = HandTranslation()
+        for v in result.yaku:
+            v.name = translate.translate(v.name, v.is_yakuman)
+
         return result
 
 
