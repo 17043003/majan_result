@@ -45,24 +45,43 @@ class HandTranslation:
         self.yakumans = {
             "Chiihou" : "地和",
             "Chinroutou" : "清老頭",
-            "ChuurenPoutou" : "九蓮宝燈",
-            "DaburuChuurenPoutou" : "",
-            "DaburuKokushiMusou" : "",
+            "Chuuren Poutou" : "九蓮宝燈",
+            "Daburu Chuuren Poutou" : "純正九蓮宝燈",
+            "Kokushi Musou Juusanmen Matchi" : "国士無双十三面待ち",
             "Daichisei" : "大七星",
             "Daisangen" : "大三元",
             "Daisharin" : "大車輪",
-            "DaiSuushii" : "大四喜",
-            "KokushiMusou" : "国士無双",
-            "Paarenchan" : "",
-            "RenhouYakuman" : "",
+            "Dai Suushii" : "大四喜",
+            "Kokushi Musou" : "国士無双",
+            "Paarenchan" : "八連荘",
+            "RenhouYakuman" : "人和",
             "Ryuuiisou" : "緑一色",
             "Sashikomi" : "",
             "Shousuushii" : "小四喜",
-            "Suuankou" : "四暗刻",
-            "SuuankouTanki" : "四暗刻",
-            "Suukantsu" : "四槓子",
+            "Suu Ankou" : "四暗刻",
+            "Suu Ankou Tanki" : "四暗刻",
+            "Suu Kantsu" : "四槓子",
             "Tenhou" : "天和",
-            "Tsuuiisou" : "字一色",
+            "Tsuu Iisou" : "字一色",
+        }
+
+        self.fu_reason = {
+            "base" : "基本符",
+            "penchan" : "ペンチャン",
+            "kanchan" : "カンチャン",
+            "valued_pair" : "役牌雀頭",
+            "double_valued_pair" : "ダブル役牌雀頭",
+            "pair_wait" : "単騎待ち",
+            "tsumo" : "ツモ",
+            "hand_without_fu" : "",
+            "closed_pon" : "暗刻(中張牌)",
+            "open_pon" : "明刻(中張牌)",
+            "closed_terminal_pon" : "暗刻(幺九牌)",
+            "open_terminal_pon" : "明刻(幺九牌)",
+            "closed_kan" : "暗槓(中張牌)",
+            "open_kan" : "明槓(中張牌)",
+            "closed_terminal_kan" : "暗槓(幺九牌)",
+            "open_terminal_kan" : "明槓(幺九牌)"
         }
 
         return
@@ -74,6 +93,10 @@ class HandTranslation:
     def yakuman_translate(self, hand_name):
         translated_hand_name = self.yakumans[hand_name]
         return translated_hand_name
+
+    def fu_translate(self, reason):
+        return self.fu_reason[reason]
+
 
     def translate(self, hand_name, is_yakuman=False):
         if(is_yakuman):
