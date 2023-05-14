@@ -65,6 +65,25 @@ class HandTranslation:
             "Tsuu Iisou" : "字一色",
         }
 
+        self.fu_reason = {
+            "base" : "基本符",
+            "penchan" : "ペンチャン",
+            "kanchan" : "カンチャン",
+            "valued_pair" : "役牌雀頭",
+            "double_valued_pair" : "ダブル役牌雀頭",
+            "pair_wait" : "単騎待ち",
+            "tsumo" : "ツモ",
+            "hand_without_fu" : "",
+            "closed_pon" : "暗刻(中張牌)",
+            "open_pon" : "明刻(中張牌)",
+            "closed_terminal_pon" : "暗刻(幺九牌)",
+            "open_terminal_pon" : "明刻(幺九牌)",
+            "closed_kan" : "暗槓(中張牌)",
+            "open_kan" : "明槓(中張牌)",
+            "closed_terminal_kan" : "暗槓(幺九牌)",
+            "open_terminal_kan" : "明槓(幺九牌)"
+        }
+
         return
 
     def hand_translate(self, hand_name):
@@ -74,6 +93,10 @@ class HandTranslation:
     def yakuman_translate(self, hand_name):
         translated_hand_name = self.yakumans[hand_name]
         return translated_hand_name
+
+    def fu_translate(self, reason):
+        return self.fu_reason[reason]
+
 
     def translate(self, hand_name, is_yakuman=False):
         if(is_yakuman):

@@ -97,6 +97,9 @@ class MajanPoint:
         translate = HandTranslation()
         for v in result.yaku:
             v.name = translate.translate(v.name, v.is_yakuman)
+        
+        for v in result.fu_details:
+            v['reason'] = translate.fu_translate(v['reason'])
 
         return result
 
