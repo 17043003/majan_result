@@ -1,4 +1,5 @@
 fastapi
+uvicorn
 mahjong == 1.2.0
 
 pytest
